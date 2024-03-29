@@ -1,0 +1,8 @@
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.dll
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\refint\DAL.dll
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.pdb
