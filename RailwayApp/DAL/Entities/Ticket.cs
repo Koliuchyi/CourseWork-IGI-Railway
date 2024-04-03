@@ -7,6 +7,6 @@ public class Ticket
     public decimal TicketPrice { get; set; }
     public int RouteId { get; set; }
     public Route? Route { get; set; }
-    public int TicketId { get; set; }
+    public int ClientId { get; set; }
     public Client? Client { get; set; }
 }

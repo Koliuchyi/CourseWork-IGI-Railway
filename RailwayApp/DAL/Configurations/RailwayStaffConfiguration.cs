@@ -8,6 +8,16 @@ public class RailwayStaffConfiguration : IEntityTypeConfiguration<RailwayStaff>
 {
     public void Configure(EntityTypeBuilder<RailwayStaff> builder)
     {
-        throw new NotImplementedException();
+        builder.HasKey(s => s.Id);
+        builder.Property(s => s.Id).HasColumnName("staff_id").IsRequired();
+        builder.Property(s => s.Name).HasColumnName("name").HasMaxLength(20).IsRequired();
+        builder.Property(s => s.LastName).HasColumnName("lastname").HasMaxLength(20).IsRequired();
+        builder.Property(s => s.Role).HasColumnName("role").HasMaxLength(20).IsRequired();
+        builder.Property(s => s.ContactNumber).HasColumnName("contact_number").IsRequired();
+        builder.Property(s => s.PassportData).HasColumnName("passport_data").HasMaxLength(20).IsRequired();
+        builder.Property(s => s.Email).HasColumnName("email").HasMaxLength(20).IsRequired();
+        builder.HasIndex(s => s.Email).IsUnique();
+        builder.Property(s => s.Password).HasColumnName("password").HasMaxLength(20).IsRequired();
+        builder.HasIndex(s => s.Password).IsUnique();
     }
 }

@@ -27,10 +27,12 @@ public class ApplicationRailwayContext : DbContext
         Database.EnsureCreated();
     }
 
+    private readonly StreamWriter logStream = new StreamWriter("mylog.txt", true);
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
+            optionsBuilder.LogTo(logStream.WriteLine);
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")

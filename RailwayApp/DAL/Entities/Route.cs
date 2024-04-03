@@ -3,7 +3,7 @@
 public class Route
 {
     public int Id { get; set; }
-    public string? DurationTime { get; set; }
+    public TimeOnly DurationTime { get; set; }
     public decimal FullRoutePrice { get; set; }
     public int TrainId { get; set; }
     public Train? Train { get; set; }
