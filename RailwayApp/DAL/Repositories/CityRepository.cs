@@ -33,7 +33,7 @@ public class CityRepository : ICityRepository
         City? item = _dbContext.Cities.FirstOrDefault(c => c.Name == entity.Name);
         if (item != null)
             throw new Exception("Такой объект уже есть в бд");
-        _dbContext.Add(entity); 
+        _dbContext.Add(entity);
         _dbContext.SaveChanges();
     }
 

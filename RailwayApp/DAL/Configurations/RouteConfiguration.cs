@@ -10,9 +10,10 @@ public class RouteConfiguration : IEntityTypeConfiguration<Route>
     {
         builder.HasKey(r => r.Id);
         builder.Property(r => r.Id).HasColumnName("route_id").IsRequired();
-        builder.Property(r => r.DurationTime).HasColumnName("duration_time").HasMaxLength(30).IsRequired()
+        builder.Property(r => r.DurationTime).HasColumnName("duration_time").IsRequired()
+            .HasColumnType("time")
             .HasConversion(
-                v => v.ToString(),
+                v => v.ToString("HH:mm"),
                 v => TimeOnly.Parse(v)
             );
         builder.Property(r => r.FullRoutePrice).HasColumnName("full_price").IsRequired();
