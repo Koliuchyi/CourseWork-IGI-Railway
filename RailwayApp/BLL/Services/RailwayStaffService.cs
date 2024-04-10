@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class RailwayStaffService : IRailwayStaffService
 {
-    IRepository<RailwayStaff> Database { get; set; }
+    IRailwayStaffRepository Database { get; set; }
     IMapper _mapper;
     
-    public RailwayStaffService(IRepository<RailwayStaff> db, IMapper mapper)
+    public RailwayStaffService(IRailwayStaffRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

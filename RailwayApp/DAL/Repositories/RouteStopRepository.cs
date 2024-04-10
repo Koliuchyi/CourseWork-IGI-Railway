@@ -20,12 +20,9 @@ public class RouteStopRepository : IRouteStopRepository
             .ToList();
     }
 
-    public RouteStop GetById(int id)
+    public RouteStop? GetById(int id)
     {
-        RouteStop? item = _dbContext.RouteStops.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.RouteStops.Find(id);
     }
 
     public void AddEntity(RouteStop entity)

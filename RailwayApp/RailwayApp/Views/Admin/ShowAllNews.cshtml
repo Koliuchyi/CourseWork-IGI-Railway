@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BLL.DTO.NewsTableDTO>
+
+@{
+    ViewBag.Title = "Новостная панель";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-xxl m-1">
+    <div class="table-wrapper">
+        <div class="table-title m-3">
+            <div class="col-sm-6">
+                <div class="row">
+                    <a asp-action="CreateNews" class="btn btn-primary">
+                        <span>Добавить</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Номер
+                    </th>
+                    <th>
+                        Заголовок
+                    </th>
+                    <th>
+                        Описание
+                    </th>
+                    <th>
+                        Фото
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Photo)
+                        </td>
+                        <td>
+                            <a asp-action="UpdateNews" asp-route-id="@item.Id" class="btn btn-info">Редактировать</a>
+                            <a asp-action="DeleteNews" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+                        </td>
+                    </tr> 
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

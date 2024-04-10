@@ -6,3 +6,10 @@ E:\Учёба Университет\ИГИ\Курсовая работа\Railwa
 E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.dll
 E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\refint\DAL.dll
 E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.pdb
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\bin\Debug\net8.0\DAL.deps.json
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\bin\Debug\net8.0\DAL.dll
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\bin\Debug\net8.0\DAL.pdb
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\ref\DAL.dll
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+E:\Учёба Университет\ИГИ\Курсовая работа\RailwayApp\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache

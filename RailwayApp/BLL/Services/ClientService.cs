@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class ClientService : IClientService
 {
-    IRepository<Client> Database { get; set; }
+    IClientRepository Database { get; set; }
     IMapper _mapper;
     
-    public ClientService(IRepository<Client> db, IMapper mapper)
+    public ClientService(IClientRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

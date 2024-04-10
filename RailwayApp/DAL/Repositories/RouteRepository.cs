@@ -20,12 +20,9 @@ public class RouteRepository : IRouteRepository
             .ToList();
     }
 
-    public Route GetById(int id)
+    public Route? GetById(int id)
     {
-        Route? item = _dbContext.Routes.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.Routes.Find(id);
     }
 
     public void AddEntity(Route entity)

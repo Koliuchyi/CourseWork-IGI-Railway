@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class StationService : IStationService
 {
-    IRepository<Station> Database { get; set; }
+    IStationRepository Database { get; set; }
     IMapper _mapper;
     
-    public StationService(IRepository<Station> db, IMapper mapper)
+    public StationService(IStationRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

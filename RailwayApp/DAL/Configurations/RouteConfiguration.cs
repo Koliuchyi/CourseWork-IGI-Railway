@@ -11,11 +11,7 @@ public class RouteConfiguration : IEntityTypeConfiguration<Route>
         builder.HasKey(r => r.Id);
         builder.Property(r => r.Id).HasColumnName("route_id").IsRequired();
         builder.Property(r => r.DurationTime).HasColumnName("duration_time").IsRequired()
-            .HasColumnType("time")
-            .HasConversion(
-                v => v.ToString("HH:mm"),
-                v => TimeOnly.Parse(v)
-            );
+            .HasColumnType("time");
         builder.Property(r => r.FullRoutePrice).HasColumnName("full_price").IsRequired();
         builder
             .HasOne(r => r.Train)

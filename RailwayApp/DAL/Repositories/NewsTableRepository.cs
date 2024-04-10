@@ -20,12 +20,10 @@ public class NewsTableRepository : INewsTableRepository
             .ToList();
     }
 
-    public NewsTable GetById(int id)
+    public NewsTable? GetById(int id)
     {
-        NewsTable? item = _dbContext.NewsTables.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.NewsTables.Find(id);
+
     }
 
     public void AddEntity(NewsTable entity)
@@ -36,7 +34,6 @@ public class NewsTableRepository : INewsTableRepository
 
     public void UpdateEntity(NewsTable entity)
     {
-        
         _dbContext.Entry(entity).State = EntityState.Modified;
         _dbContext.SaveChanges();
     }

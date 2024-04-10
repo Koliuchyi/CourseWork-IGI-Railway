@@ -22,26 +22,17 @@ public class StationRepository : IStationRepository
 
     public Station GetById(int id)
     {
-        Station? item = _dbContext.Stations.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.Stations.Find(id);
     }
 
     public void AddEntity(Station entity)
     {
-        Station? item = _dbContext.Stations.FirstOrDefault(c => c.Name == entity.Name);
-        if (item != null)
-            throw new Exception("Такой объект уже есть в бд");
         _dbContext.Add(entity); 
         _dbContext.SaveChanges();
     }
 
     public void UpdateEntity(Station entity)
     {
-        Station? item = _dbContext.Stations.FirstOrDefault(c => c.Name == entity.Name);
-        if (item == null)
-            throw new Exception("Такого объекта не существует в бд");
         _dbContext.Entry(entity).State = EntityState.Modified;
         _dbContext.SaveChanges();
     }

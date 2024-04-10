@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class CityService : ICityService
 {
-    IRepository<City> Database { get; set; }
+    ICityRepository Database { get; set; }
     IMapper _mapper;
     
-    public CityService(IRepository<City> db, IMapper mapper)
+    public CityService(ICityRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

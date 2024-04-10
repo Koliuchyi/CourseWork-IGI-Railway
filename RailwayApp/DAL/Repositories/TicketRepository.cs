@@ -21,10 +21,7 @@ public class TicketRepository : ITicketRepository
 
     public Ticket GetById(int id)
     {
-        Ticket? item = _dbContext.Tickets.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.Tickets.Find(id);
     }
 
     public void AddEntity(Ticket entity)

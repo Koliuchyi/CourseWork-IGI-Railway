@@ -20,12 +20,12 @@ public class RailwayStaffDTO
     public string? Role { get; set; }
     
     [Required(ErrorMessage = "Не указан логин")]
-    [StringLength(20, MinimumLength = 3, ErrorMessage = "Длина логина должна быть до 20 символов")]
+    [StringLength(35, MinimumLength = 3, ErrorMessage = "Длина логина должна быть до 35 символов")]
     [EmailAddress(ErrorMessage = "Некорректный формат адреса электронной почты")]
     public string? Email { get; set; }
     
     [Required(ErrorMessage = "Не указан пароль")]
-    [StringLength(20, MinimumLength = 3, ErrorMessage = "Длина пароля должна быть до 20 символов")]
+    [StringLength(30, MinimumLength = 3, ErrorMessage = "Длина пароля должна быть до 30 символов")]
     public string? Password { get; set; }
     
     [Required(ErrorMessage = "Не указан номер телефона")]

@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class CountryService : ICountryService
 {
-    IRepository<Country> Database { get; set; }
+    ICountryRepository Database { get; set; }
     IMapper _mapper;
     
-    public CountryService(IRepository<Country> db, IMapper mapper)
+    public CountryService(ICountryRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

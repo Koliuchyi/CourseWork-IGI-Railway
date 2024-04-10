@@ -22,26 +22,17 @@ public class CarriageRepository : ICarriageRepository
 
     public Carriage? GetById(int id)
     {
-        Carriage? carriage = _dbContext.Carriages.FirstOrDefault(c => c.Id == id);
-        if (carriage != null)
-            return carriage;
-        return null;
+        return _dbContext.Carriages.Find(id);
     }
 
     public void AddEntity(Carriage entity)
     {
-        Carriage? carriage = _dbContext.Carriages.FirstOrDefault(c => c.Name == entity.Name);
-        if (carriage != null)
-            throw new Exception("Такой объект уже есть в бд");
         _dbContext.Add(entity); 
         _dbContext.SaveChanges();
     }
-
+    
     public void UpdateEntity(Carriage entity)
     {
-        Carriage? carriage = _dbContext.Carriages.FirstOrDefault(c => c.Name == entity.Name);
-        if (carriage == null)
-            throw new Exception("Такого объекта не существует в бд");
         _dbContext.Entry(entity).State = EntityState.Modified;
         _dbContext.SaveChanges();
     }

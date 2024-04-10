@@ -20,28 +20,20 @@ public class CityRepository : ICityRepository
             .ToList();
     }
 
-    public City GetById(int id)
+    public City? GetById(int id)
     {
-        City? item = _dbContext.Cities.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.Cities.Find(id);
+
     }
 
     public void AddEntity(City entity)
     {
-        City? item = _dbContext.Cities.FirstOrDefault(c => c.Name == entity.Name);
-        if (item != null)
-            throw new Exception("Такой объект уже есть в бд");
-        _dbContext.Add(entity);
+        _dbContext.Add(entity); 
         _dbContext.SaveChanges();
     }
 
     public void UpdateEntity(City entity)
     {
-        City? item = _dbContext.Cities.FirstOrDefault(c => c.Name == entity.Name);
-        if (item == null)
-            throw new Exception("Такого объекта не существует в бд");
         _dbContext.Entry(entity).State = EntityState.Modified;
         _dbContext.SaveChanges();
     }

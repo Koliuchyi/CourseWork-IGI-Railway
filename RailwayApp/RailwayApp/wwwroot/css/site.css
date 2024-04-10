@@ -20,3 +20,34 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbar-brand {
+  display: contents;
+}
+
+.nav-item {
+  padding-top: 3px;
+  padding-left: 18px;
+}
+
+.container-fluid {
+  display: block;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.container-fluid {
+  justify-content: space-around;
+}
+
+.navbar-nav .nav-item .nav-link {
+  border: 1px solid transparent; /* Прозрачная граница */
+}
+
+/* Применение анимации к пунктам меню при наведении */
+.navbar-nav .nav-item .nav-link:hover {
+  border-color: #8B0000; /* Бордовый цвет границы */
+  transition: border-color 0.3s ease; /* Плавная анимация */
+}

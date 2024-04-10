@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class TypeCarriageService : ITypeCarriageService
 {
-    IRepository<TypeCarriage> Database { get; set; }
+    ITypeCarriageRepository Database { get; set; }
     IMapper _mapper;
     
-    public TypeCarriageService(IRepository<TypeCarriage> db, IMapper mapper)
+    public TypeCarriageService(ITypeCarriageRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

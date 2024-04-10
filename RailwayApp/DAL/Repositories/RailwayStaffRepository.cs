@@ -20,28 +20,19 @@ public class RailwayStaffRepository : IRailwayStaffRepository
             .ToList();
     }
 
-    public RailwayStaff GetById(int id)
+    public RailwayStaff? GetById(int id)
     {
-        RailwayStaff? item = _dbContext.RailwayStaves.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.RailwayStaves.Find(id);
     }
 
     public void AddEntity(RailwayStaff entity)
     {
-        RailwayStaff? item = _dbContext.RailwayStaves.FirstOrDefault(c => c.PassportData == entity.PassportData);
-        if (item != null)
-            throw new Exception("Такой объект уже есть в бд");
         _dbContext.Add(entity); 
         _dbContext.SaveChanges();
     }
 
     public void UpdateEntity(RailwayStaff entity)
     {
-        RailwayStaff? item = _dbContext.RailwayStaves.FirstOrDefault(c => c.PassportData == entity.PassportData);
-        if (item == null)
-            throw new Exception("Такого объекта не существует в бд");
         _dbContext.Entry(entity).State = EntityState.Modified;
         _dbContext.SaveChanges();
     }

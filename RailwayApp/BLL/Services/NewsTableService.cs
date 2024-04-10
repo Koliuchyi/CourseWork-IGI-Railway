@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class NewsTableService : INewsTableService
 {
-    IRepository<NewsTable> Database { get; set; }
+    INewsTableRepository Database { get; set; }
     IMapper _mapper;
     
-    public NewsTableService(IRepository<NewsTable> db, IMapper mapper)
+    public NewsTableService(INewsTableRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

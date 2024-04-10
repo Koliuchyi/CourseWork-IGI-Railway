@@ -15,7 +15,7 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
         builder.Property(c => c.ContactNumber).HasColumnName("contact_number").HasMaxLength(30);
         builder.Property(c => c.PassportData).HasColumnName("passport_data").HasMaxLength(30).IsRequired();
         builder.HasIndex(c => c.PassportData).IsUnique();
-        builder.Property(c => c.Email).HasColumnName("email").HasMaxLength(30).IsRequired();
+        builder.Property(c => c.Email).HasColumnName("email").HasMaxLength(35).IsRequired();
         builder.HasIndex(с => с.Email).IsUnique();
         builder.Property(c => c.Password).HasColumnName("password").HasMaxLength(30).IsRequired();
         builder.HasIndex(c => c.Password).IsUnique();

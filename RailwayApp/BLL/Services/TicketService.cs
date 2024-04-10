@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class TicketService : ITicketService
 {
-    IRepository<Ticket> Database { get; set; }
+    ITicketRepository Database { get; set; }
     IMapper _mapper;
     
-    public TicketService(IRepository<Ticket> db, IMapper mapper)
+    public TicketService(ITicketRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

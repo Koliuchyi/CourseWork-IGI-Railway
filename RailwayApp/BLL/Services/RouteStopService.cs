@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class RouteStopService : IRouteStopService
 {
-    IRepository<RouteStop> Database { get; set; }
+    IRouteStopRepository Database { get; set; }
     IMapper _mapper;
     
-    public RouteStopService(IRepository<RouteStop> db, IMapper mapper)
+    public RouteStopService(IRouteStopRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

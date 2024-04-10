@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class RouteService : IRouteService
 {
-    IRepository<Route> Database { get; set; }
+    IRouteRepository Database { get; set; }
     IMapper _mapper;
     
-    public RouteService(IRepository<Route> db, IMapper mapper)
+    public RouteService(IRouteRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

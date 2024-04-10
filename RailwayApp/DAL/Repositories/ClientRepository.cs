@@ -20,28 +20,20 @@ public class ClientRepository : IClientRepository
             .ToList();
     }
 
-    public Client GetById(int id)
+    public Client? GetById(int id)
     {
-        Client? item = _dbContext.Clients.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.Clients.Find(id);
+
     }
 
     public void AddEntity(Client entity)
     {
-        Client? item = _dbContext.Clients.FirstOrDefault(c => c.PassportData == entity.PassportData);
-        if (item != null)
-            throw new Exception("Такой объект уже есть в бд");
         _dbContext.Add(entity); 
         _dbContext.SaveChanges();
     }
 
     public void UpdateEntity(Client entity)
     {
-        Client? item = _dbContext.Clients.FirstOrDefault(c => c.PassportData == entity.PassportData);
-        if (item == null)
-            throw new Exception("Такого объекта не существует в бд");
         _dbContext.Entry(entity).State = EntityState.Modified;
         _dbContext.SaveChanges();
     }

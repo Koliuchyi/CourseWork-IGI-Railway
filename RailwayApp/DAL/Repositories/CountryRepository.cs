@@ -20,28 +20,19 @@ public class CountryRepository : ICountryRepository
             .ToList();
     }
 
-    public Country GetById(int id)
+    public Country? GetById(int id)
     {
-        Country? item = _dbContext.Countries.FirstOrDefault(c => c.Id == id);
-        if (item != null)
-            return item;
-        return null;
+        return _dbContext.Countries.Find(id);
     }
 
     public void AddEntity(Country entity)
     {
-        Country? item = _dbContext.Countries.FirstOrDefault(c => c.Name == entity.Name);
-        if (item != null)
-            throw new Exception("Такой объект уже есть в бд");
         _dbContext.Add(entity); 
         _dbContext.SaveChanges();
     }
 
     public void UpdateEntity(Country entity)
     {
-        Country? item = _dbContext.Countries.FirstOrDefault(c => c.Name == entity.Name);
-        if (item == null)
-            throw new Exception("Такого объекта не существует в бд");
         _dbContext.Entry(entity).State = EntityState.Modified;
         _dbContext.SaveChanges();
     }

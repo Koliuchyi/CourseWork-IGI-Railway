@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class TrainService : ITrainService
 {
-    IRepository<Train> Database { get; set; }
+    ITrainRepository Database { get; set; }
     IMapper _mapper;
     
-    public TrainService(IRepository<Train> db, IMapper mapper)
+    public TrainService(ITrainRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

@@ -8,10 +8,10 @@ namespace BLL.Services;
 
 public class CarriageService : ICarriageService
 {
-    IRepository<Carriage> Database { get; set; }
+    ICarriageRepository Database { get; set; }
     IMapper _mapper;
     
-    public CarriageService(IRepository<Carriage> db, IMapper mapper)
+    public CarriageService(ICarriageRepository db, IMapper mapper)
     {
         Database = db;
         _mapper = mapper;

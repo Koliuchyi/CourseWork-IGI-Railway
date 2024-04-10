@@ -1,48 +1,28 @@
-﻿using System.Threading.Channels;
-using DAL.Configurations;
+﻿using DAL.Configurations;
 using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-
 namespace DAL;
 
 public class ApplicationRailwayContext : DbContext
 {
-    public DbSet<Carriage> Carriages { get; set; } = null!;
-    public DbSet<City> Cities { get; set; } = null!;
-    public DbSet<Client> Clients { get; set; } = null!;
-    public DbSet<Country> Countries { get; set; } = null!;
-    public DbSet<NewsTable> NewsTables { get; set; } = null!;
-    public DbSet<RailwayStaff> RailwayStaves { get; set; } = null!;
-    public DbSet<Route> Routes { get; set; } = null!;
-    public DbSet<RouteStop> RouteStops { get; set; } = null!;
-    public DbSet<Station> Stations { get; set; } = null!;
-    public DbSet<Ticket> Tickets { get; set; } = null!;
-    public DbSet<Train> Trains { get; set; } = null!;
-    public DbSet<TypeCarriage> TypeCarriages { get; set; } = null!;
-    public DbSet<TypeTrain> TypeTrains { get; set; } = null!;
-
-    public ApplicationRailwayContext()
+    public ApplicationRailwayContext(DbContextOptions<ApplicationRailwayContext> options) : base(options)
     {
+        Database.EnsureDeleted();
         Database.EnsureCreated();
     }
-
-    private readonly StreamWriter logStream = new StreamWriter("mylog.txt", true);
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.LogTo(logStream.WriteLine);
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-
-            var connectionString = configuration.GetConnectionString("ConnectString");
-            optionsBuilder.LogTo(Console.WriteLine);
-            optionsBuilder.UseSqlServer(connectionString);
-        }
-    }
+    public DbSet<Carriage> Carriages { get; set; }
+    public DbSet<City> Cities { get; set; }
+    public DbSet<Client> Clients { get; set; }
+    public DbSet<Country> Countries { get; set; }
+    public DbSet<NewsTable> NewsTables { get; set; }
+    public DbSet<RailwayStaff> RailwayStaves { get; set; }
+    public DbSet<Route> Routes { get; set; }
+    public DbSet<RouteStop> RouteStops { get; set; }
+    public DbSet<Station> Stations { get; set; }
+    public DbSet<Ticket> Tickets { get; set; }
+    public DbSet<Train> Trains { get; set; }
+    public DbSet<TypeCarriage> TypeCarriages { get; set; }
+    public DbSet<TypeTrain> TypeTrains { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
