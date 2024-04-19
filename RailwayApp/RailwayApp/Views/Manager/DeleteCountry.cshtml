@@ -1,0 +1,41 @@
+﻿@model BLL.DTO.CountryDTO
+
+@{
+    Layout = "_ManagerLayout";
+}
+
+@{ ViewData["Title"] = "Удаление страны"; }
+
+<div class="container">
+    <h1>Удаление страны</h1>
+
+    <h3>Вы действительно хотите удалить?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Номер
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                Название страны
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Фото
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Url.Content(Model.Photo)" class="img-fluid news-photo" alt="Фото флага">
+            </dd>
+        </dl>
+        <br>
+        <form asp-action="DeleteCountry">
+            <input type="submit" value="Удалить" class="btn btn-danger m-1" />
+            <a asp-action="ShowAllCountries" class="m-1">Назад</a>
+        </form>
+    </div>
+</div>

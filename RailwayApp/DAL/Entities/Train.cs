@@ -7,6 +7,7 @@ public class Train
     public int CarriageCount { get; set; }
     public int TypeTrainId { get; set; }
     public TypeTrain? TypeTrain { get; set; }
-    public List<Carriage> Carriages { get; set; } = new();
+    public int CarriageId { get; set; }
+    public Carriage? Carriage { get; set; }
     public Route? Route { get; set; }
 }

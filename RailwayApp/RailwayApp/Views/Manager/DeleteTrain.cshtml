@@ -1,0 +1,65 @@
+﻿@model BLL.DTO.TrainDTO
+
+@{
+    Layout = "_ManagerLayout";
+}
+
+@{ ViewData["Title"] = "Удаление поезда"; }
+
+<div class="container">
+    <h1>Удаление поезда</h1>
+
+    <h3>Вы действительно хотите удалить?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Номер
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                Имя
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Кол-во вагонов
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CarriageCount)
+            </dd>
+            <dt class="col-sm-2">
+                Тип поезда
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TypeTrain.TypeName)
+            </dd>
+            <dt class="col-sm-2">
+                Фото типа
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Url.Content(Model.TypeTrain.Photo)" class="img-fluid news-photo" alt="Фото типа поезда">
+            </dd>
+            <dt class="col-sm-2">
+                Вагон
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Carriage.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Фото вагона
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Url.Content(Model.Carriage.TypeCarriage.Photo)" class="img-fluid news-photo" alt="Фото типа вагона">
+            </dd>
+        </dl>
+        <br>
+        <form asp-action="DeleteTrain">
+            <input type="submit" value="Удалить" class="btn btn-danger m-1" />
+            <a asp-action="ShowAllTrains" class="m-1">Назад</a>
+        </form>
+    </div>
+</div>

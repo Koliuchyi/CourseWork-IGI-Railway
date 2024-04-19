@@ -70,12 +70,156 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/AboutRoute.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxBYm91dFJvdXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateCarriage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVDYXJyaWFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateCity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVDaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateCountry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVDb3VudHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateRoute.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVSb3V0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateRouteStop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVSb3V0ZVN0b3AuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateStation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVTdGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateTrain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVUcmFpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateTypeCarriage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVUeXBlQ2FycmlhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/CreateTypeTrain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVUeXBlVHJhaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteCarriage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVDYXJyaWFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteCity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVDaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteCountry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVDb3VudHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteRoute.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVSb3V0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteRouteStop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVSb3V0ZVN0b3AuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteStation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVTdGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteTrain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVUcmFpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteTypeCarriage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVUeXBlQ2FycmlhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/DeleteTypeTrain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxEZWxldGVUeXBlVHJhaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/ShowAllCarriages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93QWxsQ2FycmlhZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/ShowAllCities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93QWxsQ2l0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/ShowAllCountries.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93QWxsQ291bnRyaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/ShowAllRoutes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93QWxsUm91dGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/ShowAllStations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93QWxsU3RhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/ShowAllTrains.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93QWxsVHJhaW5zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/ShowAllTypeCarriage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93QWxsVHlwZUNhcnJpYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/ShowAllTypeTrain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93QWxsVHlwZVRyYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/UpdateCarriage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxVcGRhdGVDYXJyaWFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/UpdateCity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxVcGRhdGVDaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/UpdateCountry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxVcGRhdGVDb3VudHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/UpdateStation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxVcGRhdGVTdGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/UpdateTrain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxVcGRhdGVUcmFpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/UpdateTypeCarriage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxVcGRhdGVUeXBlQ2FycmlhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Manager/UpdateTypeTrain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxVcGRhdGVUeXBlVHJhaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Shared/_ManagerLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYW5hZ2VyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Учёба Университет/ИГИ/Курсовая работа/RailwayApp/RailwayApp/Views/Shared/_ValidationScriptsPartial.cshtml]

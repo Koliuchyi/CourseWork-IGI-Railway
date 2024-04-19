@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BLL.DTO.CarriageDTO>
+
+@{
+    ViewBag.Title = "Вагоны";
+    Layout = "_ManagerLayout";
+}
+
+<div class="container-xxl m-1">
+    <div class="table-wrapper">
+        <div class="table-title m-3">
+            <div class="col-sm-6">
+                <div class="row">
+                    <a asp-action="CreateCarriage" class="btn btn-primary">
+                        <span>Добавить</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th> Номер </th>
+                    <th> Имя </th>
+                    <th> Кол-во мест </th>
+                    <th> Тип вагона </th>
+                    <th> Фото </th>
+                    <th> Действия </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.PlacesCount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.TypeCarriage.TypeName)
+                        </td>
+                        <td>
+                            <img src="@item.TypeCarriage.Photo" alt="Фото" class="img-thumbnail">
+                        </td>
+                        <td>
+                            <a asp-action="UpdateCarriage" asp-route-id="@item.Id" class="btn btn-info">Редактировать</a>
+                            <a asp-action="DeleteCarriage" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+                        </td>
+                    </tr> 
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

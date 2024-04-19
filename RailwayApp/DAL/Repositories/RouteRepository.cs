@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using System.Collections;
+using DAL.Entities;
 using DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,24 @@ public class RouteRepository : IRouteRepository
     {
         return _dbContext.Routes
             .OrderBy(c => c.Id)
+            .ToList();
+    }
+
+    public IEnumerable<Route> GetAllWithAnotherData()
+    {
+        return _dbContext.Routes
+            .Include(t => t.Train)
+            .ThenInclude(tt => tt.TypeTrain)
+            .Include(t => t.Train)
+            .ThenInclude(c => c.Carriage)
+            .ThenInclude(tc => tc.TypeCarriage)
+            .Include(rt => rt.RouteStops)
+            .ThenInclude(s => s.Station)
+            .ThenInclude(c => c.City)
+            .ThenInclude(ct => ct.Country)
+            .Include(tc => tc.Tickets)
+            .ThenInclude(cl => cl.Client)
+            .OrderBy(r => r.Id)
             .ToList();
     }
 

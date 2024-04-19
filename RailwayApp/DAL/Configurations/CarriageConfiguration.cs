@@ -15,10 +15,6 @@ public class CarriageConfiguration : IEntityTypeConfiguration<Carriage>
         builder.Property(c => c.PlacesCount).HasColumnName("places_count").IsRequired();
         builder.HasCheckConstraint("check_positive_places_count", "places_count > 0");
         builder
-            .HasOne(c => c.Train)
-            .WithMany(t => t.Carriages)
-            .HasForeignKey(c => c.TrainId);
-        builder
             .HasOne(c => c.TypeCarriage)
             .WithOne(tc => tc.Carriage)
             .HasForeignKey<Carriage>(c => c.TypeCarriageId);

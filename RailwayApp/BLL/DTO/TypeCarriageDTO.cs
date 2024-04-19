@@ -11,7 +11,10 @@ public class TypeCarriageDTO
     [StringLength(20, MinimumLength = 3, ErrorMessage = "Длина типа должна быть до 20 символов")]
     public string? TypeName { get; set; }
     
-    [Required]
+    [Required(ErrorMessage = "Отсутствует описание")]
+    public string? Description { get; set; }
+    [Required(ErrorMessage = "Отсутствует фото")]
+
     public string? Photo { get; set; }
 
     public CarriageDTO? Carriage { get; set; }

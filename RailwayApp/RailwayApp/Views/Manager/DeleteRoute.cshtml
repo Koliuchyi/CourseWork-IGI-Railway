@@ -1,0 +1,89 @@
+﻿@model BLL.DTO.RouteDTO
+
+@{
+    Layout = "_ManagerLayout";
+}
+
+@{ ViewData["Title"] = "Удаление маршрута"; }
+
+<div class="container">
+    <h1>Удаление маршрута</h1>
+    <h3>Вы действительно хотите удалить?</h3>
+    <h3>@Html.DisplayFor(model => model.RouteStops
+            .OrderBy(rs => rs.SequenceNumber)
+            .FirstOrDefault().Station.Name) - 
+        @Html.DisplayFor(model => model.RouteStops
+            .OrderBy(rs => rs.SequenceNumber)
+            .LastOrDefault().Station.Name)</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Номер
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                Полный путь:
+            </dt>
+            <dd class="col-sm-10">
+                Начало пути -><br>
+                @{
+                    foreach (var item in Model.RouteStops)
+                    {
+                        <span>@item.Station.Name -></span><br>
+                    }
+                }
+                Конец пути.
+            </dd>
+            <dt class="col-sm-2">
+                Время отправления
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RouteStops
+                    .OrderBy(rs => rs.SequenceNumber)
+                    .FirstOrDefault().DepartureDate)
+                <br>
+                @Html.DisplayFor(model => model.RouteStops
+                    .OrderBy(rs => rs.SequenceNumber)
+                    .FirstOrDefault().DepartureTime)
+            </dd>
+            <dt class="col-sm-2">
+                Время прибытия
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RouteStops
+                    .OrderBy(rs => rs.SequenceNumber)
+                    .LastOrDefault().DepartureDate)
+                <br>
+                @Html.DisplayFor(model => model.RouteStops
+                    .OrderBy(rs => rs.SequenceNumber)   
+                    .LastOrDefault().DepartureTime)
+            </dd>
+            <dt class="col-sm-2">
+                Поезд
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Url.Content(Model.Train.TypeTrain.Photo)" class="img-fluid news-photo" alt="Фото поезда"/>
+            </dd>
+            <dt class="col-sm-2">
+                Тип вагона
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Url.Content(Model.Train.Carriage.TypeCarriage.Photo)" class="img-fluid news-photo" alt="Фото вагона"/>
+            </dd>
+            <dt class="col-sm-2">
+                Полная стоимость
+            </dt>
+            <dd class="col-sm-10">
+                 @Html.DisplayFor(model => model.FullRoutePrice)       
+            </dd>
+        </dl>
+        <br>
+        <form asp-action="DeleteRoute">
+            <input type="submit" value="Удалить" class="btn btn-danger m-1" />
+            <a asp-action="ShowAllRoutes" class="m-1">Вернуться назад</a>
+        </form>
+    </div>
+</div>

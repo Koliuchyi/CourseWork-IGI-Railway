@@ -22,9 +22,18 @@ public class TrainService : ITrainService
         return _mapper.Map<IEnumerable<Train>, List<TrainDTO>>(Database.GetAll());
     }
 
+    public IEnumerable<TrainDTO> GetAllWithTypes()
+    {
+        return _mapper.Map<IEnumerable<Train>, List<TrainDTO>>(Database.GetAllWithTypes());
+    }
     public TrainDTO GetById(int id)
     {
         return _mapper.Map<Train, TrainDTO>(Database.GetById(id));
+    }
+    
+    public TrainDTO GetByIdWithTypes(int id)
+    {
+        return _mapper.Map<Train, TrainDTO>(Database.GetByIdWithTypes(id));
     }
 
     public void Add(TrainDTO entity)

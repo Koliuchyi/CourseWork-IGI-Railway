@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections;
+using AutoMapper;
 using BLL.DTO;
 using BLL.Interfaces;
 using DAL.Entities;
@@ -20,6 +21,11 @@ public class RouteService : IRouteService
     public IEnumerable<RouteDTO> GetAll()
     {
         return _mapper.Map<IEnumerable<Route>, List<RouteDTO>>(Database.GetAll());
+    }
+
+    public IEnumerable<RouteDTO> GetAllWithAnotherData()
+    {
+        return _mapper.Map<IEnumerable<Route>, List<RouteDTO>>(Database.GetAllWithAnotherData());
     }
 
     public RouteDTO GetById(int id)

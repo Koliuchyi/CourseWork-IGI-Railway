@@ -7,8 +7,8 @@ public class ApplicationRailwayContext : DbContext
 {
     public ApplicationRailwayContext(DbContextOptions<ApplicationRailwayContext> options) : base(options)
     {
-        Database.EnsureDeleted();
-        Database.EnsureCreated();
+        //Database.EnsureDeleted();
+        //Database.EnsureCreated();
     }
     public DbSet<Carriage> Carriages { get; set; }
     public DbSet<City> Cities { get; set; }

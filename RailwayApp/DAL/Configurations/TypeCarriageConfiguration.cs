@@ -12,6 +12,7 @@ public class TypeCarriageConfiguration : IEntityTypeConfiguration<TypeCarriage>
         builder.Property(tc => tc.Id).HasColumnName("type_carriage_id").IsRequired();
         builder.Property(tc => tc.TypeName).HasColumnName("type_name").HasMaxLength(20).IsRequired();
         builder.HasIndex(tc => tc.TypeName).IsUnique();
+        builder.Property(tc => tc.Description).HasColumnName("description").IsRequired();
         builder.Property(tc => tc.Photo).HasColumnName("photo").IsRequired();
     }
 }

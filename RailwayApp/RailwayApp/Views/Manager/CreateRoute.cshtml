@@ -1,0 +1,103 @@
+﻿@model CombineRouteViewModel
+@{ ViewData["Title"] = "Создание маршрута"; }
+@{
+    Layout = "_ManagerLayout";
+}
+
+<div class="container">
+    <h1>Добавление маршрута</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateRoute">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <a asp-action="CreateRouteStop" class="btn btn-warning">
+                        Добавить остановку
+                    </a>
+                </div>
+                <div class="form-group" id="selectedStations">
+                    @{
+                        if (Model.StopModels.Count > 0)
+                        {
+                            <span>Полный маршрут:</span><br>
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th>
+                                        Порядковый номер
+                                    </th>
+                                    <th>
+                                        Название станции
+                                    </th>
+                                    <th>
+                                        Дата прибытия
+                                    </th>
+                                    <th>
+                                        Время прибытия
+                                    </th>
+                                    <th>
+                                        Дата отправления
+                                    </th>
+                                    <th>
+                                        Время отправления
+                                    </th>
+                                    <th>
+                                        Действия
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var item in Model.StopModels)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(model => item.SequenceNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => item.Station.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => item.ArrivalDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => item.ArrivalTime)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => item.DepartureDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => item.DepartureTime)
+                                        </td>
+                                        <td>
+                                            <a asp-action="DeleteRouteStop" asp-route-id="@item.SequenceNumber" class="btn btn-danger">Удалить</a>
+                                        </td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        }
+                    }
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="MainRoute.TrainId" class="control-label">Поезд</label>
+                    <select asp-for="MainRoute.TrainId" class="form-control" asp-items="@ViewBag.Trains"></select>
+                    <span asp-validation-for="MainRoute.TrainId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MainRoute.FullRoutePrice" class="control-label">Общая стоимость</label>
+                    <input asp-for="MainRoute.FullRoutePrice" class="form-control"/>
+                    <span asp-validation-for="MainRoute.FullRoutePrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" id="submitButton" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="ShowAllRoutes">Назад</a>
+    </div>
+</div>

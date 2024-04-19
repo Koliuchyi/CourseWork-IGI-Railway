@@ -1,5 +1,66 @@
-﻿@{
+﻿@model BLL.DTO.RailwayStaffDTO
+
+@{
     Layout = "_AdminLayout";
 }
 
-<h1>УДАЛЕНИЕ СОТРУДНИКА</h1>
+@{ ViewData["Title"] = "Удаление сотрудника"; }
+
+<div class="container">
+    <h1>Удаление сотрудника</h1>
+
+    <h3>Вы действительно хотите удалить?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Номер
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                Имя Фамилия
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                Роль
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Role)
+            </dd>
+            <dt class="col-sm-2">
+                Номер телефона
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ContactNumber)
+            </dd>
+            <dt class="col-sm-2">
+                Пасспортные данные
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PassportData)
+            </dd>
+            <dt class="col-sm-2">
+                Email
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                Пароль
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+        </dl>
+        <br>
+        <form asp-action="DeleteStaff">
+            <input type="submit" value="Удалить" class="btn btn-danger m-1" />
+            <a asp-action="ShowAllStaff" class="m-1">Назад</a>
+        </form>
+    </div>
+</div>

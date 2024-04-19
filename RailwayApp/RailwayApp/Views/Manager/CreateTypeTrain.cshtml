@@ -1,0 +1,39 @@
+﻿@model BLL.DTO.TypeTrainDTO
+@{ ViewData["Title"] = "Создание типа поезда"; }
+@{
+    Layout = "_ManagerLayout";
+}
+
+<div class="container">
+    <h1>Добавление типа поезда</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateTypeTrain">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="TypeName" class="control-label">Имя типа</label>
+                    <input asp-for="TypeName" class="form-control" />
+                    <span asp-validation-for="TypeName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Описание</label>
+                    <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label">Фото</label>
+                    <input asp-for="Photo" class="form-control"/>
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="ShowAllTypeTrain">Назад</a>
+    </div>
+</div>

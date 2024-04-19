@@ -312,6 +312,13 @@ th {
   text-align: -webkit-match-parent;
 }
 
+.table .thead-dark th {
+  white-space: nowrap;
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+
 thead,
 tbody,
 tfoot,

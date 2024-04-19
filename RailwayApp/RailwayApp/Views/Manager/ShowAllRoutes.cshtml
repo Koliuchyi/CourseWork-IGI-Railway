@@ -1,0 +1,88 @@
+﻿@model IEnumerable<BLL.DTO.RouteDTO>
+
+@{
+    ViewBag.Title = "Маршруты";
+    Layout = "_ManagerLayout";
+}
+
+<div class="container-xxl m-1">
+    <div class="table-wrapper">
+        <div class="table-title m-3">
+            <div class="col-sm-6">
+                <div class="row">
+                    <a asp-action="CreateRoute" class="btn btn-primary">
+                        <span>Добавить</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th> Номер </th>
+                    <th> Название поезда </th>
+                    <th> Пункт отправления</th>
+                    <th> Пункт прибытия</th>
+                    <th> Время отправления</th>
+                    <th> Время прибытия</th>
+                    <th> Полная стоимость</th>
+                    <th> Действия </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Train.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.RouteStops
+                                .Where(rs => rs.RouteId == item.Id)
+                                .OrderBy(rs => rs.SequenceNumber)
+                                .FirstOrDefault().Station.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.RouteStops
+                                .Where(rs => rs.RouteId == item.Id)
+                                .OrderBy(rs => rs.SequenceNumber)
+                                .LastOrDefault().Station.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.RouteStops
+                                .Where(rs => rs.RouteId == item.Id)
+                                .OrderBy(rs => rs.SequenceNumber)
+                                .FirstOrDefault().DepartureDate)
+                            <br>
+                            @Html.DisplayFor(model => item.RouteStops
+                                .Where(rs => rs.RouteId == item.Id)
+                                .OrderBy(rs => rs.SequenceNumber)
+                                .FirstOrDefault().DepartureTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.RouteStops
+                                .Where(rs => rs.RouteId == item.Id)
+                                .OrderBy(rs => rs.SequenceNumber)
+                                .LastOrDefault().ArrivalDate)
+                            <br>
+                            @Html.DisplayFor(model => item.RouteStops
+                                .Where(rs => rs.RouteId == item.Id)
+                                .OrderBy(rs => rs.SequenceNumber)
+                                .LastOrDefault().ArrivalTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.FullRoutePrice)
+                        </td>
+                        <td>
+                            <a asp-action="AboutRoute" asp-route-id="@item.Id" class="btn btn-warning">Подробнее</a>
+                            <a asp-action="DeleteTrain" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

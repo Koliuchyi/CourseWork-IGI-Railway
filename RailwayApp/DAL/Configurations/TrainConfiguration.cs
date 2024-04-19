@@ -15,6 +15,10 @@ public class TrainConfiguration : IEntityTypeConfiguration<Train>
         builder.Property(t => t.CarriageCount).HasColumnName("carriage_count").IsRequired();
         builder.HasCheckConstraint("check_positive_carriage_count", "carriage_count > 0");
         builder
+            .HasOne(c => c.Carriage)
+            .WithOne(tt => tt.Train)
+            .HasForeignKey<Train>(c => c.CarriageId);
+        builder
             .HasOne(t => t.TypeTrain)
             .WithOne(tt => tt.Train)
             .HasForeignKey<Train>(t => t.TypeTrainId);

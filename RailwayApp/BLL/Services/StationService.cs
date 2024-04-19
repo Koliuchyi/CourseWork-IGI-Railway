@@ -21,12 +21,22 @@ public class StationService : IStationService
     {
         return _mapper.Map<IEnumerable<Station>, List<StationDTO>>(Database.GetAll());
     }
-
+    
+    public IEnumerable<StationDTO> GetAllWithCity()
+    {
+        return _mapper.Map<IEnumerable<Station>, List<StationDTO>>(Database.GetAllWithCity());
+    }
+    
     public StationDTO GetById(int id)
     {
         return _mapper.Map<Station, StationDTO>(Database.GetById(id));
     }
 
+    public StationDTO GetByIdWithCity(int id)
+    {
+        return _mapper.Map<Station, StationDTO>(Database.GetByIdWithCity(id));
+    }
+    
     public void Add(StationDTO entity)
     {
         Database.AddEntity(_mapper.Map<Station>(entity));

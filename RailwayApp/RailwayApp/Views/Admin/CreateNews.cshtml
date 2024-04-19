@@ -1,5 +1,39 @@
-﻿@{
+﻿@model BLL.DTO.NewsTableDTO
+@{ ViewData["Title"] = "Создание новости"; }
+@{
     Layout = "_AdminLayout";
 }
 
-<h1>СОЗДАНИЕ НОВОСТИ</h1>
+<div class="container">
+    <h1>Добавление новости</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateNews">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">Заголовок</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Описание</label>
+                    <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label">Фото</label>
+                    <input asp-for="Photo" class="form-control" />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="ShowAllNews">Назад</a>
+    </div>
+</div>

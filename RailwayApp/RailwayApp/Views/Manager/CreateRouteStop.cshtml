@@ -1,0 +1,49 @@
+﻿@model RouteStopViewModel
+@{ ViewData["Title"] = "Создание остановки"; }
+@{
+    Layout = "_ManagerLayout";
+}
+
+<div class="container">
+    <h1>Добавление остановки</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateRouteStop">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="StationId" class="control-label">Станция</label>
+                    <select asp-for="StationId" class="form-control" asp-items="@ViewBag.Stations"></select>
+                    <span asp-validation-for="StationId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ArrivalDate" class="control-label">Дата прибытия</label>
+                    <input asp-for="ArrivalDate" type="date" id="arrivalDate" class="form-control"/>
+                    <span asp-validation-for="ArrivalDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ArrivalTime" class="control-label">Время прибытия</label>
+                    <input asp-for="ArrivalTime" type="time" class="form-control" id="arrivalTime"/>
+                    <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DepartureDate" class="control-label">Дата отправления</label>
+                    <input asp-for="DepartureDate" type="date" class="form-control" id="departureDate"/>
+                    <span asp-validation-for="DepartureDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DepartureTime" class="control-label">Время отправления</label>
+                    <input asp-for="DepartureTime" type="time" class="form-control" id="departureTime"/>
+                    <span asp-validation-for="DepartureTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="CreateRoute">Назад</a>
+    </div>
+</div>

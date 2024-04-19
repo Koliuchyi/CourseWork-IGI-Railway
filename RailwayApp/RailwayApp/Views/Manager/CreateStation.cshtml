@@ -1,0 +1,34 @@
+﻿@model BLL.DTO.StationDTO
+@{ ViewData["Title"] = "Создание станции"; }
+@{
+    Layout = "_ManagerLayout";
+}
+
+<div class="container">
+    <h1>Добавление станции</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateStation">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Название станции</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CityId" class="control-label">Название города</label>
+                    <select asp-for="CityId" class="form-control" asp-items="@ViewBag.Cities"></select>
+                    <span asp-validation-for="CityId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="ShowAllStations">Назад</a>
+    </div>
+</div>

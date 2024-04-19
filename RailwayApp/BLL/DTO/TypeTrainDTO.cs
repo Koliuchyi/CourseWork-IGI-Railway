@@ -13,6 +13,8 @@ public class TypeTrainDTO
     
     [Required(ErrorMessage = "Отсутствует описание")]
     public string? Description { get; set; }
+    [Required(ErrorMessage = "Отсутствует фото")]
+    public string? Photo { get; set; }
     
     public TrainDTO? Train { get; set; } 
 }

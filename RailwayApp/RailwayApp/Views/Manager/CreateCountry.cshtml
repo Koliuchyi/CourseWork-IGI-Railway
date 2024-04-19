@@ -1,0 +1,34 @@
+﻿@model BLL.DTO.CountryDTO
+@{ ViewData["Title"] = "Создание страны"; }
+@{
+    Layout = "_ManagerLayout";
+}
+
+<div class="container">
+    <h1>Добавление страны</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateCountry">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Название страны</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label">Фото</label>
+                    <input asp-for="Photo" class="form-control"/>
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="ShowAllCountries">Назад</a>
+    </div>
+</div>

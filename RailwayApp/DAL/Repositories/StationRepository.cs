@@ -19,12 +19,25 @@ public class StationRepository : IStationRepository
             .OrderBy(c => c.Id)
             .ToList();
     }
+    
+    public IEnumerable<Station> GetAllWithCity()
+    {
+        return _dbContext.Stations.Include(c => c.City)
+            .OrderBy(c => c.Id)
+            .ToList();
+    }
 
     public Station GetById(int id)
     {
         return _dbContext.Stations.Find(id);
     }
 
+    public Station? GetByIdWithCity(int id)
+    {
+        return _dbContext.Stations.Include(c => c.City)
+            .FirstOrDefault(c => c.Id == id);
+    }
+    
     public void AddEntity(Station entity)
     {
         _dbContext.Add(entity); 

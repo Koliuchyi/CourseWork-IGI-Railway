@@ -21,10 +21,21 @@ public class CarriageService : ICarriageService
     {
         return _mapper.Map<IEnumerable<Carriage>, List<CarriageDTO>>(Database.GetAll());
     }
+    public IEnumerable<CarriageDTO> GetAllWithCarTypes()
+    {
+        var data = Database.GetAllWithCarTypes();
+        return _mapper.Map<IEnumerable<Carriage>, List<CarriageDTO>>(data);
+    }
 
     public CarriageDTO GetById(int id)
     {
         return _mapper.Map<Carriage, CarriageDTO>(Database.GetById(id));
+    }
+    
+    public CarriageDTO GetByIdWithCarTypes(int id)
+    {
+        var data = Database.GetByIdWithCarTypes(id);
+        return _mapper.Map<Carriage, CarriageDTO>(data);
     }
 
     public void Add(CarriageDTO entity)

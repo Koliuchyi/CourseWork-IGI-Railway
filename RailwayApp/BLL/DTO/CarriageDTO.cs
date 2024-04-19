@@ -15,7 +15,6 @@ public class CarriageDTO
     [Range(1, 100, ErrorMessage = "Значение должно быть больше 0")]
     public int PlacesCount { get; set; }
     
-    public int TrainId { get; set; }
     public TrainDTO? Train { get; set; }
     public int TypeCarriageId { get; set; }
     public TypeCarriageDTO? TypeCarriage { get; set; }

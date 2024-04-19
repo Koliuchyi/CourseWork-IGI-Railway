@@ -1,6 +1,83 @@
-﻿
+﻿@model IEnumerable<BLL.DTO.RailwayStaffDTO>
+
 @{
+    ViewBag.Title = "Работа с сотрудниками";
     Layout = "_AdminLayout";
 }
 
-<h1>ВСЕ СОТРУДНИКИ</h1>
+<div class="container-xxl m-1">
+    <div class="table-wrapper">
+        <div class="table-title m-3">
+            <div class="col-sm-6">
+                <div class="row">
+                    <a asp-action="CreateStaff" class="btn btn-primary">
+                        <span>Добавить</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Номер
+                    </th>
+                    <th>
+                        Имя Фамилия
+                    </th>
+                    <th>
+                        Роль
+                    </th>
+                    <th>
+                        Телефон
+                    </th>
+                    <th>
+                        Пасспорт
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Пароль
+                    </th>
+                    <th>
+                        Действия
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Name)
+                            @Html.DisplayFor(model => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Role)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.ContactNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.PassportData)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Password)
+                        </td>
+                        <td>
+                            <a asp-action="UpdateStaff" asp-route-id="@item.Id" class="btn btn-info">Редактировать</a>
+                            <a asp-action="DeleteStaff" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+                        </td>
+                    </tr> 
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

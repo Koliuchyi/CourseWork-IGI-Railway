@@ -79,13 +79,6 @@ public class AdminController : Controller
         return RedirectToAction(nameof(ShowAllStaff));
     }
     
-    
-    
-    
-    
-    
-    
-    
     public IActionResult ShowAllNews()
     {
         var items = _newsService.GetAll();

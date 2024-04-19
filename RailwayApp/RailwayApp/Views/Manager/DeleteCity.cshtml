@@ -1,0 +1,59 @@
+﻿@model BLL.DTO.CityDTO
+
+@{
+    Layout = "_ManagerLayout";
+}
+
+@{ ViewData["Title"] = "Удаление города"; }
+
+<div class="container">
+    <h1>Удаление города</h1>
+
+    <h3>Вы действительно хотите удалить?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Номер
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                Название города
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Английское название
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EngName)
+            </dd>
+            <dt class="col-sm-2">
+                Страна
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Country.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Описание
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                Фото
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Url.Content(Model.Photo)" class="img-fluid news-photo" alt="Фото города">
+            </dd>
+        </dl>
+        <br>
+        <form asp-action="DeleteCity">
+            <input type="submit" value="Удалить" class="btn btn-danger m-1" />
+            <a asp-action="ShowAllCities" class="m-1">Назад</a>
+        </form>
+    </div>
+</div>

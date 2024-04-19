@@ -20,10 +20,22 @@ public class CityRepository : ICityRepository
             .ToList();
     }
 
+    public IEnumerable<City> GetAllWithCounty()
+    {
+        return _dbContext.Cities.Include(ct => ct.Country)
+            .OrderBy(c => c.Id)
+            .ToList();
+    }
+
     public City? GetById(int id)
     {
         return _dbContext.Cities.Find(id);
-
+    }
+    
+    public City? GetByIdWithCountry(int id)
+    {
+        return _dbContext.Cities.Include(ct => ct.Country)
+            .FirstOrDefault(c => c.Id == id);
     }
 
     public void AddEntity(City entity)

@@ -18,6 +18,7 @@ public class TrainDTO
     
     public int TypeTrainId { get; set; }
     public TypeTrainDTO? TypeTrain { get; set; }
-    public List<CarriageDTO> Carriages { get; set; } = new();
+    public int CarriageId { get; set; }
+    public CarriageDTO? Carriage { get; set; }
     public RouteDTO? Route { get; set; }
 }

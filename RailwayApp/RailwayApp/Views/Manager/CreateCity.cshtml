@@ -1,0 +1,49 @@
+﻿@model BLL.DTO.CityDTO
+@{ ViewData["Title"] = "Создание города"; }
+@{
+    Layout = "_ManagerLayout";
+}
+
+<div class="container">
+    <h1>Добавление города</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateCity">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Название города</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EngName" class="control-label">Английское название</label>
+                    <input asp-for="EngName" class="form-control" />
+                    <span asp-validation-for="EngName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Описание</label>
+                    <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label">Фото</label>
+                    <input asp-for="Photo" class="form-control"/>
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CountryId" class="control-label">Страна</label>
+                    <select asp-for="CountryId" class="form-control" asp-items="@ViewBag.Countries"></select>
+                    <span asp-validation-for="CountryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="ShowAllCities">Назад</a>
+    </div>
+</div>

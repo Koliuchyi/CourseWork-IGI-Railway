@@ -1,6 +1,47 @@
-﻿
+﻿@model BLL.DTO.NewsTableDTO
+
 @{
     Layout = "_AdminLayout";
 }
 
-<h1>УДАЛЕНИЕ НОВОСТИ</h1>
+@{ ViewData["Title"] = "Удаление новости"; }
+
+<div class="container">
+    <h1>Удаление новости</h1>
+
+    <h3>Вы действительно хотите удалить?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Номер
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                Заголовок
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-2">
+                Описание
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                Фото
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Url.Content(Model.Photo)" class="img-fluid news-photo" alt="Фото новости">
+            </dd>
+        </dl>
+        <br>
+        <form asp-action="DeleteNews">
+            <input type="submit" value="Удалить" class="btn btn-danger m-1" />
+            <a asp-action="ShowAllNews" class="m-1">Назад</a>
+        </form>
+    </div>
+</div>

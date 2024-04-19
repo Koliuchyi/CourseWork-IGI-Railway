@@ -1,0 +1,64 @@
+﻿@model IEnumerable<BLL.DTO.TypeTrainDTO>
+
+@{
+    ViewBag.Title = "Типы поездов";
+    Layout = "_ManagerLayout";
+}
+
+<div class="container-xxl m-1">
+    <div class="table-wrapper">
+        <div class="table-title m-3">
+            <div class="col-sm-6">
+                <div class="row">
+                    <a asp-action="CreateTypeTrain" class="btn btn-primary">
+                        <span>Добавить</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Номер
+                    </th>
+                    <th>
+                        Имя типа
+                    </th>
+                    <th>
+                        Описание
+                    </th>
+                    <th>
+                        Фото
+                    </th>
+                    <th>
+                        Действия
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.TypeName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Description)
+                        </td>
+                        <td>
+                            <img src="@item.Photo" alt="Фото" class="img-thumbnail">
+                        </td>
+                        <td>
+                            <a asp-action="UpdateTypeTrain" asp-route-id="@item.Id" class="btn btn-info">Редактировать</a>
+                            <a asp-action="DeleteTypeTrain" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+                        </td>
+                    </tr> 
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

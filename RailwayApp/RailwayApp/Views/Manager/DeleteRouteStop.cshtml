@@ -1,0 +1,60 @@
+﻿@model RouteStopViewModel
+
+@{
+    Layout = "_ManagerLayout";
+}
+
+@{ ViewData["Title"] = "Удаление остановки"; }
+
+<div class="container">
+    <h1>Удаление остановки</h1>
+
+    <h3>Вы действительно хотите удалить?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Порядковый номер
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SequenceNumber)
+            </dd>
+            <dt class="col-sm-2">
+                Станция
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Station.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Дата прибытия
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ArrivalDate)
+            </dd>
+            <dt class="col-sm-2">
+                Время прибытия
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ArrivalTime)
+            </dd>
+            <dt class="col-sm-2">
+                Дата отправления
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DepartureDate)
+            </dd>
+            <dt class="col-sm-2">
+                Время отправления
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DepartureTime)
+            </dd>
+        </dl>
+        <br>
+        <form asp-action="DeleteRouteStop">
+            <input type="hidden" asp-for="SequenceNumber" />
+            <input type="submit" value="Удалить" class="btn btn-danger m-1"/>
+            <a asp-action="CreateRoute" class="m-1">Назад</a>
+        </form>
+    </div>
+</div>

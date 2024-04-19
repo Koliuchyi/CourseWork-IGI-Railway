@@ -21,10 +21,20 @@ public class CityService : ICityService
     {
         return _mapper.Map<IEnumerable<City>, List<CityDTO>>(Database.GetAll());
     }
+    
+    public IEnumerable<CityDTO> GetAllWithCountry()
+    {
+        return _mapper.Map<IEnumerable<City>, List<CityDTO>>(Database.GetAllWithCounty());
+    }
 
     public CityDTO GetById(int id)
     {
         return _mapper.Map<City, CityDTO>(Database.GetById(id));
+    }
+    
+    public CityDTO GetByIdWithCountry(int id)
+    {
+        return _mapper.Map<City, CityDTO>(Database.GetByIdWithCountry(id));
     }
 
     public void Add(CityDTO entity)

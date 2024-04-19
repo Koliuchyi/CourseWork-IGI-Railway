@@ -1,0 +1,46 @@
+﻿@model BLL.DTO.TrainDTO
+
+@{
+    Layout = "_ManagerLayout";
+}
+
+@{ ViewData["Title"] = "Редактирование поезда"; }
+
+<div class="container">
+    <h1>Обновление поезда</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post" asp-action="UpdateTrain" asp-route-id="@Model.Id">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Название</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CarriageCount" class="control-label">Кол-во вагонов</label>
+                    <input asp-for="CarriageCount" class="form-control"/>
+                    <span asp-validation-for="CarriageCount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CarriageId" class="control-label">Вагон</label>
+                    <select asp-for="CarriageId" class="form-control" asp-items="@ViewBag.Carriages"></select>
+                    <span asp-validation-for="CarriageId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TypeTrainId" class="control-label">Тип поезда</label>
+                    <select asp-for="TypeTrainId" class="form-control" asp-items="@ViewBag.TrainTypes"></select>
+                    <span asp-validation-for="TypeTrainId" class="text-danger"></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="submit" value="Сохранить" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="ShowAllTrains">Назад</a>
+    </div>
+</div>

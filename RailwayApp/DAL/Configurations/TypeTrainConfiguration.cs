@@ -13,5 +13,6 @@ public class TypeTrainConfiguration : IEntityTypeConfiguration<TypeTrain>
         builder.Property(t => t.TypeName).HasColumnName("type_name").HasMaxLength(20).IsRequired();
         builder.HasIndex(t => t.TypeName).IsUnique();
         builder.Property(t => t.Description).HasColumnName("description").IsRequired();
+        builder.Property(t => t.Photo).HasColumnName("photo").IsRequired();
     }
 }

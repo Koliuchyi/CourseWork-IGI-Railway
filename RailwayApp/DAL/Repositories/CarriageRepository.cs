@@ -20,9 +20,22 @@ public class CarriageRepository : ICarriageRepository
             .ToList();
     }
 
+    public IEnumerable<Carriage> GetAllWithCarTypes()
+    {
+        return _dbContext.Carriages.Include(c => c.TypeCarriage)
+            .OrderBy(c => c.Id)
+            .ToList();
+    }
+
     public Carriage? GetById(int id)
     {
         return _dbContext.Carriages.Find(id);
+    }
+
+    public Carriage? GetByIdWithCarTypes(int id)
+    {
+        return _dbContext.Carriages.Include(c => c.TypeCarriage)
+            .FirstOrDefault(c => c.Id == id);
     }
 
     public void AddEntity(Carriage entity)
