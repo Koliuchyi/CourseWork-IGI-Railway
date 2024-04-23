@@ -12,6 +12,8 @@ public class TicketConfiguration : IEntityTypeConfiguration<Ticket>
         builder.Property(t => t.Id).HasColumnName("ticket_id").IsRequired();
         builder.Property(t => t.SeatNumber).HasColumnName("seat_number").IsRequired();
         builder.Property(t => t.TicketPrice).HasColumnName("price").IsRequired();
+        builder.Property(t => t.DepartureStation).HasColumnName("departure_station").IsRequired();
+        builder.Property(t => t.ArrivalStation).HasColumnName("arrival_station").IsRequired();
         builder
             .HasOne(t => t.Route)
             .WithMany(r => r.Tickets)

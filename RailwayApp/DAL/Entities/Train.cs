@@ -9,5 +9,5 @@ public class Train
     public TypeTrain? TypeTrain { get; set; }
     public int CarriageId { get; set; }
     public Carriage? Carriage { get; set; }
-    public Route? Route { get; set; }
+    public List<Route>? Routes { get; set; }
 }

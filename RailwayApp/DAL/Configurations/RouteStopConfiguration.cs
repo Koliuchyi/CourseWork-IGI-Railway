@@ -25,5 +25,9 @@ public class RouteStopConfiguration : IEntityTypeConfiguration<RouteStop>
             .HasOne(s => s.Route)
             .WithMany(r => r.RouteStops)
             .HasForeignKey(f => f.RouteId);
+        builder
+            .HasOne(s => s.Station)
+            .WithMany(st => st.RouteStops)
+            .HasForeignKey(s => s.StationId);
     }
 }

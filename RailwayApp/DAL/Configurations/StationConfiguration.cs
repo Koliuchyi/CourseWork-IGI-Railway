@@ -16,9 +16,5 @@ public class StationConfiguration : IEntityTypeConfiguration<Station>
             .HasOne(s => s.City)
             .WithMany(c => c.Stations)
             .HasForeignKey(f => f.CityId);
-        builder
-            .HasOne(s => s.RouteStop)
-            .WithOne(r => r.Station)
-            .HasForeignKey<RouteStop>(r => r.StationId);
     }
 }

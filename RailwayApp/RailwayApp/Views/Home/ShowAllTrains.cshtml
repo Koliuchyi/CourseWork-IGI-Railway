@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BLL.DTO.TrainDTO>
+
+@{
+    ViewBag.Title = "Поезда";
+    Layout = "_Layout";
+}
+
+<div class="container-fluid">
+    <div class="table-wrapper">
+        <br>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th> Название </th>
+                <th> Кол-во вагонов</th>
+                <th> Тип </th>
+                <th> Фото типа </th>
+                <th> Вагон </th>
+                <th> Фото вагона</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.CarriageCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.TypeTrain.TypeName)
+                    </td>
+                    <td>
+                        <img src="@item.TypeTrain.Photo" alt="Фото" class="img-thumbnail">
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Carriage.Name)
+                    </td>
+                    <td>
+                        <img src="@item.Carriage.TypeCarriage.Photo" alt="Фото" class="img-thumbnail">
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-12">
+                <a asp-action="Index" class="text-center btn btn-info">Вернуться назад</a>
+            </div>
+        </div>
+    </div>
+</div>

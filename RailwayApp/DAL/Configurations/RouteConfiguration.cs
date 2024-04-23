@@ -15,7 +15,7 @@ public class RouteConfiguration : IEntityTypeConfiguration<Route>
         builder.Property(r => r.FullRoutePrice).HasColumnName("full_price").IsRequired();
         builder
             .HasOne(r => r.Train)
-            .WithOne(t => t.Route)
-            .HasForeignKey<Route>(r => r.TrainId);
+            .WithMany(t => t.Routes)
+            .HasForeignKey(r => r.TrainId);
     }
 }

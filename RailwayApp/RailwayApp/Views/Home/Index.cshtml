@@ -1,8 +1,157 @@
-﻿@{
+﻿@model IEnumerable<BLL.DTO.NewsTableDTO>
+@{
+    Layout = "_Layout";
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid my-carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Путешествуйте с комфортом</h5>
+                  <p>Наша компания гарантирует вам комфортное путешествие на выбор из 5 разных условий поездки.</p>
+              </div>
+              <img src="https://eiti.org/sites/default/files/styles/hero_banner_desktop/public/featured_images/gleise-1555348_1920.jpg?itok=ta1bocr8" class="d-flex w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Любуйтесь природой вместе с Hedgehog Railway Company</h5>
+                  <p>Используя нашу компанию, вы получите прекрасную возможность изучать мир.</p>
+              </div>
+              <img src="https://poseydon-tur.ru/poezd1.jpg" class="d-flex w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Безопасность превыше всего</h5>
+                  <p>Избегайте перехода железнодорожных путей вне установленных для этого мест.</p>
+              </div>
+              <img src="https://sgllp.com/wp-content/uploads/SG-CareersImages-Concept3.jpg" class="d-flex w-100" alt="...">
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 </div>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center"> 
+        <div class="col-6">
+            <p class="fw-normal fs-5">Для выбора соответствующего маршрута и покупки билета необходимо зарегистрироваться:</p>
+        </div>
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <a asp-controller="Account" asp-action="Registration" class="fw-normal fs-3 text-center btn btn-outline-danger">
+                <i class="bi bi-person-circle"></i> Зарегистрироваться
+            </a>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <div class="cart-title text-center">
+                        <div class="row">
+                            <p class="fw-normal fs-3">Cправочная информация для пассажиров</p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <a asp-controller="Home" asp-action="ShowAllTrains" type="button" class="btn btn-outline-danger d-flex flex-column align-items-center">
+                                <i class="bi bi-train-front"></i>
+                                <span>Наши <br> поезда</span>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a asp-controller="Home" asp-action="ShowAllServices" type="button" class="btn btn-outline-danger d-flex flex-column align-items-center">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Наши услуги и рейтинги</span>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a asp-controller="Home" asp-action="ShowOurDataAndFriends" type="button" class="btn btn-outline-danger d-flex flex-column align-items-center">
+                                <i class="bi bi-file-person"></i>
+                                <span>О нас и наших друзьях</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <p class="fw-normal fs-3">Посмотрите видео о нашей компании</p>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <p class="fw-light fs-5">
+                        Hedgehog Railway Company - это инновация в области железнодорожных перевозок, позволяющая вас быстро и с комфортом найти билет на интересующий вас рейс.
+                    </p>
+                </div>
+                <div class="col-6 d-flex justify-content-center align-items-center"> <!-- Добавлены классы d-flex, justify-content-center, align-items-center -->
+                    <a href="https://www.youtube.com/watch?v=W-4FXgfB2dk" class="fw-normal fs-3 text-center btn btn-outline-danger">
+                        <i class="bi bi-globe2"></i> Смотреть видео
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container" id="news">
+    <div class="row">
+        <p class="fw-normal fs-3 text-center">Новостная панель</p>
+        <hr>
+    </div>
+    @{
+        int i = 1;
+        @foreach (var newsItem in Model)
+        {
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="card border border-danger">
+                        <div class="row g-0">
+                            @if (i % 2 == 0)
+                            {
+                                <div class="col-md-4 order-md-last text-md-end">
+                                    <img src="@newsItem.Photo" alt="Фото" class="img-fluid rounded-circle" style="max-height: 200px;">
+                                </div>
+                            }
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h5 class="card-title text-center">@Html.DisplayFor(model => newsItem.Title)</h5>
+                                    <hr>
+                                    <p class="card-text">@Html.DisplayFor(model => newsItem.Description)</p>
+                                </div>
+                            </div>
+                            @if (i % 2 != 0)
+                            {
+                                <div class="col-md-4 order-md-first">
+                                    <img src="@newsItem.Photo" alt="Фото" class="img-fluid rounded-circle" style="max-height: 200px;">
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            i++;
+        }
+    }
+</div>
+
+

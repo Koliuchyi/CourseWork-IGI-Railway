@@ -1,0 +1,85 @@
+﻿@model TicketRouteViewModel
+
+@{
+    ViewBag.Title = "Корзина клиента";
+    Layout = "_ClientLayout";
+}
+
+<div class="container-fluid m-1">
+    <div class="table-wrapper mx-auto"> <!-- Добавляем класс mx-auto для центрирования -->
+        <div class="table-title m-3 text-center">
+            <h2>Моя корзина</h2>
+        </div>
+        @{
+            if (Model != null)
+            {
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th> Название поезда </th>
+                        <th> Пункт отправления</th>
+                        <th> Пункт прибытия</th>
+                        <th> Время отправления</th>
+                        <th> Время прибытия</th>
+                        <th> Вместимость поезда</th>
+                        <th> Свободных мест</th>
+                        <th> Стоимость</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => model.route.Train.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.ticket.DepartureStation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.ticket.ArrivalStation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.route.RouteStops
+                                    .FirstOrDefault(s => s.Station.Name == model.ticket.DepartureStation).DepartureDate)
+                                <br>
+                                @Html.DisplayFor(model => model.route.RouteStops
+                                    .FirstOrDefault(s => s.Station.Name == model.ticket.DepartureStation).DepartureTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.route.RouteStops
+                                    .FirstOrDefault(s => s.Station.Name == model.ticket.ArrivalStation).ArrivalDate)
+                                <br>
+                                @Html.DisplayFor(model => model.route.RouteStops
+                                    .FirstOrDefault(s => s.Station.Name == model.ticket.ArrivalStation).ArrivalTime)
+                            </td>
+                            <td>
+                                @{
+                                    var countPlaces = Model.route.Train.CarriageCount * Model.route.Train.Carriage.PlacesCount;
+                                    var freeCountPlaces = countPlaces - Model.route.Tickets.Count();
+                                }
+                                <p>@countPlaces</p>
+                            </td>
+                            <td>
+                                <p>@freeCountPlaces</p>
+                            </td>
+                            <td>
+                                @{
+                                    var calculatedPrice = (Model.route.FullRoutePrice / Model.route.RouteStops.LastOrDefault().SequenceNumber) * Model.route.RouteStops.FirstOrDefault(s => s.Station.Name == Model.ticket.ArrivalStation).SequenceNumber;
+                                }
+                                <p>@calculatedPrice</p>
+                            </td>
+                        </tr>
+                    <tr>
+                        <a asp-action="Index" class="btn btn-primary">Вернуться назад</a>
+                    </tr>
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="table-title m-3 text-center">
+                    <h3>@ViewBag.Message</h3>
+                </div>
+            }
+        }      
+    </div>
+</div>

@@ -12,6 +12,8 @@ public class TicketDTO
     
     [Required(ErrorMessage = "Не указана цена билета")]
     public decimal TicketPrice { get; set; }
+    public string? DepartureStation { get; set; }
+    public string? ArrivalStation { get; set; }
     public int RouteId { get; set; }
     public RouteDTO? Route { get; set; }
     public int ClientId { get; set; }

@@ -1,0 +1,93 @@
+﻿@model OwnClientRouteViewModel
+
+@{
+    ViewBag.Title = "Найденные маршруты";
+    Layout = "_ClientLayout";
+}
+
+<div class="container-fluid m-1">
+    <div class="table-wrapper mx-auto"> <!-- Добавляем класс mx-auto для центрирования -->
+        <div class="table-title m-3 text-center">
+            <h2>Найденные маршруты</h2>
+        </div>
+        @{
+            if (Model._needRoutes.Count() > 0)
+            {
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th> Название поезда </th>
+                        <th> Пункт отправления</th>
+                        <th> Пункт прибытия</th>
+                        <th> Время отправления</th>
+                        <th> Время прибытия</th>
+                        <th> Вместимость поезда</th>
+                        <th> Свободных мест</th>
+                        <th> Стоимость</th>
+                        <th> Действия </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model._needRoutes)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => item.Train.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model._DepartureName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model._ArrivalName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.RouteStops
+                                    .FirstOrDefault(s => s.Station.Name == model._DepartureName).DepartureDate)
+                                <br>
+                                @Html.DisplayFor(model => item.RouteStops
+                                    .FirstOrDefault(s => s.Station.Name == model._DepartureName).DepartureTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.RouteStops
+                                    .FirstOrDefault(s => s.Station.Name == model._ArrivalName).ArrivalDate)
+                                <br>
+                                @Html.DisplayFor(model => item.RouteStops
+                                    .FirstOrDefault(s => s.Station.Name == model._ArrivalName).ArrivalTime)
+                            </td>
+                            <td>
+                                @{
+                                    var countPlaces = item.Train.CarriageCount * item.Train.Carriage.PlacesCount;
+                                    var freeCountPlaces = countPlaces - item.Tickets.Count();
+                                }
+                                <p>@countPlaces</p>
+                            </td>
+                            <td>
+                                <p>@freeCountPlaces</p>
+                            </td>
+                            <td>
+                                @{
+                                    var calculatedPrice = (item.FullRoutePrice / item.RouteStops.LastOrDefault().SequenceNumber) * item.RouteStops.FirstOrDefault(s => s.Station.Name == Model._ArrivalName).SequenceNumber;
+                                }
+                                <p>@calculatedPrice</p>
+                            </td>
+                            <td>
+                                <a asp-action="BookingRoute" asp-route-id="@item.Id" asp-route-DepartureName="@Model._DepartureName" asp-route-ArrivalName="@Model._ArrivalName" class="btn btn-primary">Забронировать</a>
+                                <a asp-action="AboutRoute" asp-route-id="@item.Id" asp-route-DepartureName="@Model._DepartureName" asp-route-ArrivalName="@Model._ArrivalName" class="btn btn-warning">Подробнее</a>
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <a asp-action="Index" class="btn btn-primary">Вернуться назад</a>
+                    </tr>
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="table-title m-3 text-center">
+                    <h3>Ничего не найдено...</h3>
+                </div>
+            }
+        }      
+    </div>
+</div>

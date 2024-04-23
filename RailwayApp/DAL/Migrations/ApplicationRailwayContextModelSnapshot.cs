@@ -301,8 +301,7 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TrainId")
-                        .IsUnique();
+                    b.HasIndex("TrainId");
 
                     b.ToTable("Routes");
                 });
@@ -346,8 +345,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("RouteId");
 
-                    b.HasIndex("StationId")
-                        .IsUnique();
+                    b.HasIndex("StationId");
 
                     b.ToTable("RouteStops", t =>
                         {
@@ -392,8 +390,18 @@ namespace DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("ArrivalStation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("arrival_station");
+
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
+
+                    b.Property<string>("DepartureStation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("departure_station");
 
                     b.Property<int>("RouteId")
                         .HasColumnType("int");
@@ -548,8 +556,8 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Entities.Route", b =>
                 {
                     b.HasOne("DAL.Entities.Train", "Train")
-                        .WithOne("Route")
-                        .HasForeignKey("DAL.Entities.Route", "TrainId")
+                        .WithMany("Routes")
+                        .HasForeignKey("TrainId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -565,8 +573,8 @@ namespace DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("DAL.Entities.Station", "Station")
-                        .WithOne("RouteStop")
-                        .HasForeignKey("DAL.Entities.RouteStop", "StationId")
+                        .WithMany("RouteStops")
+                        .HasForeignKey("StationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -653,12 +661,12 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Entities.Station", b =>
                 {
-                    b.Navigation("RouteStop");
+                    b.Navigation("RouteStops");
                 });
 
             modelBuilder.Entity("DAL.Entities.Train", b =>
                 {
-                    b.Navigation("Route");
+                    b.Navigation("Routes");
                 });
 
             modelBuilder.Entity("DAL.Entities.TypeCarriage", b =>

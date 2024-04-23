@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Результат бронирования";
+    Layout = "_ClientLayout";
+}
+
+<div class="container-fluid m-1">
+    <div class="table-wrapper mx-auto">
+        <div class="table-title m-3 text-center">
+            <h2>Результат бронирования: @ViewBag.Message</h2>
+        </div>
+        <a asp-action="ShowMyBagRoutes" class="btn btn-primary">Просмотреть вашу корзину</a>
+    </div>
+</div>

@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient">
     <div class="container-fluid">
         <a class="navbar-brand" asp-controller="Manager" asp-action="Index">
             <img src="~/images/logo.png" alt="Железная дорога" width="70" height="50" class="d-inline-block align-top" />
@@ -55,7 +55,7 @@
                         Отчетность
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Популярные маршруты</a>
+                        <a class="dropdown-item" asp-controller="Manager" asp-action="PopulationDiagram">Популярные маршруты</a>
                     </div>
                 </li>
             </ul>
@@ -63,7 +63,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        Менеджер: Имя_Фамилия
+                        Менеджер
                     </a>
                 </li>
                 <li class="nav-item">

@@ -1,5 +1,7 @@
 ﻿@model AuthorizationViewModel
-
+@{
+    Layout = "_AccountLayout";
+}
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card border-primary p-4">
@@ -22,3 +24,37 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Ошибка!</h5>
+                <button type="button" class="close" data-dismiss="modal" id="closeErrorModalBtn" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="closeErrorModalBtn" class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+            $(document).ready(function () {
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <text>
+                        $("#errorModal").modal('show');
+                        $("#errorMessage").text("@Html.Raw(ViewBag.ErrorMessage)");
+                    </text>
+                }
+            });
+            $(document).on("click", "#closeErrorModalBtn", function () {
+                        $("#errorModal").modal("hide");
+                    });
+    </script>

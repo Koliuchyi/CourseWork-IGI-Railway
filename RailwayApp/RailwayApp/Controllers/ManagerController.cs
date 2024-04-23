@@ -648,4 +648,18 @@ public class ManagerController : Controller
         _routeService.Delete(item.Id);
         return RedirectToAction(nameof(ShowAllRoutes));
     }
+
+    public IActionResult PopulationDiagram()
+    {
+        var routesData = _routeService.GetAllWithAnotherData();
+        string route = "";
+        PopulationDiagramViewModel pdvm = new PopulationDiagramViewModel();
+        foreach (var diagram in routesData)
+        {
+            route = diagram.RouteStops.OrderBy(rs => rs.SequenceNumber).FirstOrDefault().Station.Name +
+                    diagram.RouteStops.OrderBy(rs => rs.SequenceNumber).LastOrDefault().Station.Name;
+            pdvm.countPeopleForRoute.Add(route, diagram.Tickets.Count);
+        }
+        return View(pdvm);
+    }
 }
